@@ -1,23 +1,38 @@
 ---
 layout: post
-title: My first post!
+title: Analysing Movie Database
+author: Revathy Natarajan
 ---
 
-Hello everyone.
-sfsfsdf
+## Overview
+These days everywhere entertainment and lots to watch for on the internet ranging from short stories to blogbuster movies. We are going to analyse the popular IMDB movie database and find what make the movie successful in the industry.
 
-<img src="../images/jekyll-logo.png">
+Here we are going to only concentrate on top250 movies from IMBD database and analyse what features of the movies makes it successfull. Either its famous Actor, Actress, or Director or Story writer or Awards its won make its success.
+
+## Methods
+Using API(Application Programming Interface) its not very technical, just a way to scrape the data from internet and after that I felt like an hacker(don't say to any one - followed the website guidelines to scrape its data)
+
+The respective features we analyse towards the success of the movies are:
+* Movie release year
+* Genre (Romance, Drama, Comedy etc)
+* Awards (Oscar, or its own any other awards)
+* Actors
 
 ```python
-s = "Python syntax highlighting"
-print s
+df_movies_g[['Title','Gross']].sort_values('Gross', ascending=False).head(10)
 ```
+<img src="../images/top_movies.png">
+
+Lets look at how many moives release each year and look at its histogram 
+
 ```python
-print "Unique value in year: \t\t" , df_billboard['year'].nunique()
-print "No of unique artists: \t\t" , df_billboard['artist.inverted'].nunique()
-print "No. of unique tracks: \t\t" , df_billboard['track'].nunique()
-print "No. of unique time:  \t\t", df_billboard['time'].nunique()
-print "No. of unique genres:  \t\t", df_billboard['genre'].nunique()
-print "No. of unique date.entered: \t", df_billboard['date.entered'].nunique()
-print "No. of unique date.peaked: \t", df_billboard['date.peaked'].nunique()
+df_movies_g['Year'].hist()
+plt.title('Histogram of Years')
+plt.axvline(np.mean(df_movies['Year']),color="red")
+plt.axvline(np.median(df_movies['Year']),color="green")
+plt.xlabel('Year')
+plt.ylabel('Frequency')
+plt.show()
 ```
+
+
