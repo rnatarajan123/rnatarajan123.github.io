@@ -42,11 +42,11 @@ Also look at the imdbrating as well and how it appears for 250 movies
 
 Confusion Matrix - have closer look how the model predicted
 
-<img src="../Confusion_matrix.png">
+<img src="../images/Confusion_matrix.png">
 
 Decision Tree - structure
 
-<img src="../DecisionTree.png">
+<img src="../images/DecisionTree.png">
 
 ## Conclusion
 Having exploring just 250 movies doesn't provide much data and these feature doesn't impact the movie score a lot. Given more time and further learning of decision tree algorithm I would like to try and analyse more with additional feature which plays towards the success of the movie and its rating as per IMDB.
