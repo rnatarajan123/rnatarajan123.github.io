@@ -13,10 +13,10 @@ Here we are going to only concentrate on top250 movies from IMBD database and an
 Using API(Application Programming Interface) its not very technical, just a way to scrape the data from internet and after that I felt like an hacker(don't say to any one - followed the website guidelines to scrape its data)
 
 The respective features we analyse towards the success of the movies are:
-* Movie release year
-* Genre (Romance, Drama, Comedy etc)
-* Awards (Oscar, or its own any other awards)
-* Actors
+*Movie release year
+*Genre (Romance, Drama, Comedy etc)
+*Awards (Oscar, or its own any other awards)
+*Actors
 
 ```python
 df_movies_g[['Title','Gross']].sort_values('Gross', ascending=False).head(10)
@@ -34,5 +34,20 @@ plt.xlabel('Year')
 plt.ylabel('Frequency')
 plt.show()
 ```
+<img src="../images/year.png">
 
+Also look at the imdbrating as well and how it appears for 250 movies
+
+<img src="../images/imdb_rating.png">
+
+Confusion Matrix - have closer look how the model predicted
+
+<img src="../Confusion_matrix.png">
+
+Decision Tree - structure
+
+<img src="../DecisionTree.png">
+
+## Conclusion
+Having exploring just 250 movies doesn't provide much data and these feature doesn't impact the movie score a lot. Given more time and further learning of decision tree algorithm I would like to try and analyse more with additional feature which plays towards the success of the movie and its rating as per IMDB.
 
